@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moto Academy Bouwmeester</title>
+  <link rel="icon" type="image/png" href="https://scontent-ams4-1.xx.fbcdn.net/v/t39.30808-6/495072154_4132809980288832_1344883067052586069_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=RpMaOBk4s9AQ7kNvwFiwEtr&_nc_oc=Adlqbau74PPDNp-o1nnhU5Mdr2sqVQyeE5Ju1ud6Vc2W2Bn5Ha-Oehgj4m5iXN-S74s&_nc_zt=23&_nc_ht=scontent-ams4-1.xx&_nc_gid=KySq795_Ney5_EvKsxBU3g&oh=00_AfP2n5K0-uHDGEPbSqUhtV7fbdXQBMuU29WX-FS6e8G27w&oe=686B001B">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+    header img.logo {
+      height: 60px;
+      margin-right: 1rem;
+      border-radius: 8px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    header p {
+      margin: 0;
+      font-size: 1rem;
+      color: #ccc;
+    }
+    nav {
+      background-color: #34495e;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      border-bottom: 3px solid #2980b9;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+      color: #2980b9;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      height: 180px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      flex-direction: column;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px black;
+    }
+    .lightbox .close-btn {
+      color: white;
+      font-size: 2rem;
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #00acee;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    address {
+      font-style: normal;
+      line-height: 1.6;
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      header img.logo {
+        margin: 0 0 1rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header met logo -->
+  <header>
+    <img class="logo" src="https://scontent-ams4-1.xx.fbcdn.net/v/t39.30808-6/495072154_4132809980288832_1344883067052586069_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=RpMaOBk4s9AQ7kNvwFiwEtr&_nc_oc=Adlqbau74PPDNp-o1nnhU5Mdr2sqVQyeE5Ju1ud6Vc2W2Bn5Ha-Oehgj4m5iXN-S74s&_nc_zt=23&_nc_ht=scontent-ams4-1.xx&_nc_gid=KySq795_Ney5_EvKsxBU3g&oh=00_AfP2n5K0-uHDGEPbSqUhtV7fbdXQBMuU29WX-FS6e8G27w&oe=686B001B" alt="Logo Moto Academy" />
+    <div>
+      <h1>Moto Academy Bouwmeester</h1>
+      <p>Dé plek voor motortraining en rijopleidingen</p>
+    </div>
+  </header>
+
+  <!-- Navigatie -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#over">Over Ons</a>
+    <a href="#diensten">Diensten</a>
+    <a href="#fotos">Foto's</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hoofdinhoud -->
+  <main>
+    <section id="home">
+      <h2>Welkom bij Moto Academy Bouwmeester</h2>
+      <p>Bij Moto Academy Bouwmeester leer je veilig en zelfverzekerd motorrijden. Of je nu beginner bent of je rijvaardigheden wilt verbeteren, wij bieden professionele trainingen aangepast aan jouw niveau.</p>
+    </section>
+
+    <section id="over">
+      <h2>Over Ons</h2>
+      <p>Moto Academy Bouwmeester is al jaren dé specialist in motortrainingen in de regio. Met ervaren instructeurs en moderne lesmethodes zorgen we dat jij met plezier en veiligheid de weg op gaat.</p>
+    </section>
+
+    <section id="diensten">
+      <h2>Onze Diensten</h2>
+      <ul>
+        <li><strong>Basis Motoropleiding</strong>: Voor beginners die willen starten met motorrijden.</li>
+        <li><strong>Gevorderde Rijvaardigheidstraining</strong>: Verbeter je controle en zelfvertrouwen op de motor.</li>
+        <li><strong>Veiligheidscursus</strong>: Leer belangrijke veiligheidsvaardigheden en noodsituaties beheersen.</li>
+        <li><strong>Rijexamens Begeleiding</strong>: Training en coaching gericht op het motorrijexamen.</li>
+      </ul>
+    </section>
+
+    <section id="fotos">
+      <h2>Foto's</h2>
+      <div class="gallery">
+        <img src="https://scontent-ams2-1.xx.fbcdn.net/v/t39.30808-6/505395385_122117083826866201_3321378407517039646_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=OeQk4F9v6mYQ7kNvwGBbzBy&_nc_oc=AdmIxIxBIXQbTHdZdw52GY7D_6VT8t5xd88uYD4gX9DdySvSY0NuWWJ-c7wHQQJM97M&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&_nc_gid=10QmRRlpkwnelvGd7sg3wA&oh=00_AfNw5YKUm2VDEvMyIPWcenLTsjNgL84CRGsRiUNtaVtJPw&oe=686B1278" alt="Training 1" onclick="openLightbox(this.src)" />
+        <img src="https://scontent-ams4-1.xx.fbcdn.net/v/t39.30808-6/505580498_122115978218866201_3813613242967118121_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=-eSmcApTBDgQ7kNvwFE5RTe&_nc_oc=AdkjaHqdsKWUKOIW0GLuA8o7o86ecDvmDH8xPlSwXY2uZJBGLxbLbvz13mw2En-kCXQ&_nc_zt=23&_nc_ht=scontent-ams4-1.xx&_nc_gid=pvuVdwMlRNBOn1J_rKpbJw&oh=00_AfN5pC7lenmwFXobWfBgNZnsEdH24FXb27iHU19oOPdOEg&oe=686B0374" alt="Training 2" onclick="openLightbox(this.src)" />
+        <img src="https://scontent-ams4-1.xx.fbcdn.net/v/t39.30808-6/496154885_122098374170866201_6070384817666590219_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=BAh6vb-2kDEQ7kNvwHkkORi&_nc_oc=AdmYbN5JK1Ve968c7h3AiOmw9OznUneCq-t-OR23wZb2oUIJdrp027dIiPxpjoLgpPs&_nc_zt=23&_nc_ht=scontent-ams4-1.xx&_nc_gid=FMjnUqVb7zJKHimn1957Mw&oh=00_AfN-pR-lPaIwbiJyMoy5LBJZ271TV00HusHTCd0h7XmWtw&oe=686AE93F" alt="Training 3" onclick="openLightbox(this.src)" />
+        <img src="https://scontent-ams2-1.xx.fbcdn.net/v/t39.30808-6/495464794_122097142124866201_4580134331368263603_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Fs7WcZ8WxLgQ7kNvwGJAFMH&_nc_oc=Adk9lTr2EA8vn8g_IowqNEVBXNYc83f4SFRnPbYySfUfSntGQTGvB8wYHS_B9dq54yg&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&_nc_gid=m6hqidMVPqxndUfWu5FUog&oh=00_AfN-WDoA1Hqgm0YX_YfrMQDnPa5lkfGngW1nBcZ49WAJ6w&oe=686B1144" alt="Training 4" onclick="openLightbox(this.src)" />
+                <img src="https://scontent-ams2-1.xx.fbcdn.net/v/t39.30808-6/499421228_122110492874866201_5482599233074008474_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=l7ct26ymgsgQ7kNvwFBsdk5&_nc_oc=Adlq45CS9O0RcbKc_RW-il-dT2-xOou7wrzpyxyVXzrdsWGxldwFW2Xy2nt3ru6fU08&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&_nc_gid=ycgrTgWB8qme6emiULvZ_w&oh=00_AfM29BPk9uy0e5Y00kd3AEYWvKAobzx2YeXiAhCh0GgZWw&oe=686AFDF3" alt="Training 4" onclick="openLightbox(this.src)" />
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <span class="close-btn" onclick="closeLightbox()">&#10006;</span>
+      <img id="lightbox-img" src="" alt="Vergrote foto" />
+    </div>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <address>
+        <strong>Adres:</strong> Moto Academy Bouwmeester<br />
+        Voorbeeldstraat 123<br />
+        1234 AB Plaatsnaam<br /><br />
+        <strong>Telefoon:</strong> 06-12345678<br />
+        <strong>E-mail:</strong> info@motoacademybouwmeester.nl<br />
+      </address>
+    </section>
+  </main>
+
+  <!-- Footer met Facebook-link -->
+  <footer>
+    &copy; 2025 Moto Academy Bouwmeester –  
+    <a href="https://www.facebook.com/people/Moto-Academy-Bouwmeester/61575986040026/" target="_blank">Volg ons op Facebook</a>
+  </footer>
+
+  <!-- JavaScript voor lightbox -->
+  <script>
+    function openLightbox(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").classList.add("active");
+    }
+    function closeLightbox() {
+      document.getElementById("lightbox").classList.remove("active");
+    }
+  </script>
+</body>
+</html>
