@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Moto Academy Bouwmeester - Galerij</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f0f0f0;
+      color: #333;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      padding: 2rem;
+    }
+    .gallery img {
+      width: 250px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    .lightbox:target {
+      display: flex;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Moto Academy Bouwmeester</h1>
+  <p>Fotogalerij - Klik voor groter formaat</p>
+</header>
+
+<div class="gallery">
+  <!-- Foto 1 -->
+  <a href="#img1">
+    <img src="https://scontent-ams2-1.xx.fbcdn.net/v/t39.30808-6/509425391_122119804454866201_6762739309801296422_n.jpg?stp=cp6_dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=WeGiCFzVOuEQ7kNvwFsscwO&_nc_oc=AdkZbD_t_qDpAMQRFqTJvrkSDLmR-j1NpK4M0uzydTIcqsCh7GNx3HMv6eXiqpNFrWQ&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&_nc_gid=HS-ta5NACSDqvW9FpJ66yw&oh=00_AfPAxKDYTjkoq5F7KXBD6oibuwoL1DEHOFIavKdUv665UA&oe=686ABCF8" alt="Foto 1" />
+  </a>
+  <!-- Foto 2 -->
+  <a href="#img2">
+    <img src="https://scontent-ams2-1.xx.fbcdn.net/v/t39.30808-6/505395385_122117083826866201_3321378407517039646_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=OeQk4F9v6mYQ7kNvwGBbzBy&_nc_oc=AdmIxIxBIXQbTHdZdw52GY7D_6VT8t5xd88uYD4gX9DdySvSY0NuWWJ-c7wHQQJM97M&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&_nc_gid=CUZJg5Gunx7C-DYw5_aGVA&oh=00_AfOZsLNo9_MWcapa_zPFdqj1QjmsEBBlUm_bDeJV-GsdmQ&oe=686ADA38" alt="Foto 2" />
+  </a>
+  <!-- Foto 3 -->
+  <a href="#img3">
+    <img src="https://scontent-ams2-1.xx.fbcdn.net/v/t39.30808-6/505386600_122115978230866201_6837720837379439065_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=rIqz7tspkxcQ7kNvwF04hNE&_nc_oc=AdldBh-GTlQFEcrndSZOTQqYW1O0JPvdtIbGElKN-XX1rNfXt0hmWOwaotnw3wOS7RU&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&_nc_gid=9JKu6DeVx62zLhxiWqFpCQ&oh=00_AfPgK1jvKdeOSYquk7jc_emUhYvJI_Ys-iy64PFm9AzzYA&oe=686AC4CD" alt="Foto 3" />
+  </a>
+  <!-- Foto 4 -->
+  <a href="#img4">
+    <img src="https://scontent-ams4-1.xx.fbcdn.net/v/t39.30808-6/505580498_122115978218866201_3813613242967118121_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=-eSmcApTBDgQ7kNvwFE5RTe&_nc_oc=AdkjaHqdsKWUKOIW0GLuA8o7o86ecDvmDH8xPlSwXY2uZJBGLxbLbvz13mw2En-kCXQ&_nc_zt=23&_nc_ht=scontent-ams4-1.xx&_nc_gid=Jv2w1vgO-epMppIOspCfmw&oh=00_AfPuGAQKEfGxUBjE1vC4rh9tEZcTQh0Zeue6fr5lqB75Lg&oe=686ACB34" alt="Foto 4" />
+  </a>
+  <!-- Foto 5 -->
+  <a href="#img5">
+    <img src="https://scontent-ams4-1.xx.fbcdn.net/v/t39.30808-6/505608529_122115978158866201_128525097727464002_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=oY1NcbR8KUsQ7kNvwGhqXNm&_nc_oc=AdmZkCN3rXQXEhpJDNDZlJJFqhK5T-voYenP9wVlLSNmyDBRzoE7-RSjKDgdv1QToJ0&_nc_zt=23&_nc_ht=scontent-ams4-1.xx&_nc_gid=gC4CYqvt7QbJtMCEBIEDEg&oh=00_AfPbm8ONcM2eIwiohRWYYEYTFfYR_ul0bK6AwBsmopS1Pg&oe=686ACB1F" alt="Foto 5" />
+  </a>
+  <!-- Foto 6 -->
+  <a href="#img6">
+    <img src="https://scontent-ams2-1.xx.fbcdn.net/v/t39.30808-6/511295851_122120946068866201_1848284428462357363_n.jpg?stp=c0.411.1536.802a_cp6_dst-jpg_s526x296_tt6&_nc_cat=106&ccb=1-7&_nc_sid=75d36f&_nc_ohc=6KeknmGSP7kQ7kNvwFNIGr4&_nc_oc=AdkSLRuBw1Qp57kbqWWg9IIzoszW9-fo16m5Wj35zrxgJoQoPLrXtpFBZpeP6IrfGV0&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&_nc_gid=Fn-0hwE_8Y0puDaHcOX96w&oh=00_AfMB0KFYcIdd5jQ5HTT1tRFv7QYF0r_pHEMYUxjtWiw19g&oe=686AE7F8" alt="Foto 6" />
+  </a>
+</div>
+
+<!-- Lightbox popups -->
+<div id="img1" class="lightbox">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="https://scontent-ams2-1.xx.fbcdn.net/v/t39.30808-6/509425391_122119804454866201_6762739309801296422_n.jpg?stp=cp6_dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=WeGiCFzVOuEQ7kNvwFsscwO&_nc_oc=AdkZbD_t_qDpAMQRFqTJvrkSDLmR-j1NpK4M0uzydTIcqsCh7GNx3HMv6eXiqpNFrWQ&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&_nc_gid=HS-ta5NACSDqvW9FpJ66yw&oh=00_AfPAxKDYTjkoq5F7KXBD6oibuwoL1DEHOFIavKdUv665UA&oe=686ABCF8" />
+</div>
+<div id="img2" class="lightbox">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="https://scontent-ams2-1.xx.fbcdn.net/v/t39.30808-6/505395385_122117083826866201_3321378407517039646_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=OeQk4F9v6mYQ7kNvwGBbzBy&_nc_oc=AdmIxIxBIXQbTHdZdw52GY7D_6VT8t5xd88uYD4gX9DdySvSY0NuWWJ-c7wHQQJM97M&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&_nc_gid=CUZJg5Gunx7C-DYw5_aGVA&oh=00_AfOZsLNo9_MWcapa_zPFdqj1QjmsEBBlUm_bDeJV-GsdmQ&oe=686ADA38" />
+</div>
+<div id="img3" class="lightbox">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="https://scontent-ams2-1.xx.fbcdn.net/v/t39.30808-6/505386600_122115978230866201_6837720837379439065_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=rIqz7tspkxcQ7kNvwF04hNE&_nc_oc=AdldBh-GTlQFEcrndSZOTQqYW1O0JPvdtIbGElKN-XX1rNfXt0hmWOwaotnw3wOS7RU&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&_nc_gid=9JKu6DeVx62zLhxiWqFpCQ&oh=00_AfPgK1jvKdeOSYquk7jc_emUhYvJI_Ys-iy64PFm9AzzYA&oe=686AC4CD" />
+</div>
+<div id="img4" class="lightbox">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="https://scontent-ams4-1.xx.fbcdn.net/v/t39.30808-6/505580498_122115978218866201_3813613242967118121_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=-eSmcApTBDgQ7kNvwFE5RTe&_nc_oc=AdkjaHqdsKWUKOIW0GLuA8o7o86ecDvmDH8xPlSwXY2uZJBGLxbLbvz13mw2En-kCXQ&_nc_zt=23&_nc_ht=scontent-ams4-1.xx&_nc_gid=Jv2w1vgO-epMppIOspCfmw&oh=00_AfPuGAQKEfGxUBjE1vC4rh9tEZcTQh0Zeue6fr5lqB75Lg&oe=686ACB34" />
+</div>
+<div id="img5" class="lightbox">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="https://scontent-ams4-1.xx.fbcdn.net/v/t39.30808-6/505608529_122115978158866201_128525097727464002_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=oY1NcbR8KUsQ7kNvwGhqXNm&_nc_oc=AdmZkCN3rXQXEhpJDNDZlJJFqhK5T-voYenP9wVlLSNmyDBRzoE7-RSjKDgdv1QToJ0&_nc_zt=23&_nc_ht=scontent-ams4-1.xx&_nc_gid=gC4CYqvt7QbJtMCEBIEDEg&oh=00_AfPbm8ONcM2eIwiohRWYYEYTFfYR_ul0bK6AwBsmopS1Pg&oe=686ACB1F" />
+</div>
+<div id="img6" class="lightbox">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="https://scontent-ams2-1.xx.fbcdn.net/v/t39.30808-6/511295851_122120946068866201_1848284428462357363_n.jpg?stp=c0.411.1536.802a_cp6_dst-jpg_s526x296_tt6&_nc_cat=106&ccb=1-7&_nc_sid=75d36f&_nc_ohc=6KeknmGSP7kQ7kNvwFNIGr4&_nc_oc=AdkSLRuBw1Qp57kbqWWg9IIzoszW9-fo16m5Wj35zrxgJoQoPLrXtpFBZpeP6IrfGV0&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&_nc_gid=Fn-0hwE_8Y0puDaHcOX96w&oh=00_AfMB0KFYcIdd5jQ5HTT1tRFv7QYF0r_pHEMYUxjtWiw19g&oe=686AE7F8" />
+</div>
+
+</body>
+</html>
